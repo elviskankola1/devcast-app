@@ -5,10 +5,21 @@
 
 				<nav class="navigation">
 					<ul class="menu">
-						<li class="menuitem active"><router-link to="/">Home</router-link></li>
-						<li class="menuitem"><router-link to="/podcasts">Podcast</router-link></li>
-						<li class="menuitem"><router-link to="/about">About</router-link></li>
-						<li class="menuitem"><router-link to="/contact">contact</router-link></li>
+            <router-link :to="{name: 'home'}" tag="li" class="menuitem">
+              <a>Home</a>
+            </router-link>
+
+            <router-link :to="{name: 'podcasts.index'}" tag="li" class="menuitem">
+              <a>Podcasts</a>
+            </router-link>
+
+            <router-link :to="{name: 'about'}" tag="li" class="menuitem">
+              <a>About</a>
+            </router-link>
+
+            <router-link :to="{name: 'contact'}" tag="li" class="menuitem">
+              <a>Contact</a>
+            </router-link>
 					</ul>
 
 					<a href="#" class="btn-hamburguer-menu"><i class="fa fa-bars"></i></a>

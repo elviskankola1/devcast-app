@@ -26,7 +26,9 @@
 		</section>
 
     <main id="main" class="main">
-      <router-view/>
+      <transition>
+        <router-view/>
+      </transition>
     </main>
     <Footer></Footer>
   </div>
