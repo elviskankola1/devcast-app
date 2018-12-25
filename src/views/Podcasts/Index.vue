@@ -1,87 +1,80 @@
 <template>
 <div class="posdcasts-index">
   <section id="#episodes" class="section-positive">
-  <div class="container">
+    <div class="container">
+      <h2 class="title-default">Episodes</h2>
+      <div class="row">
 
-  <h2 class="title-default">Episodes</h2>
-  <div class="row">
+        <!-- ===== LAST PODCAST ===== -->
+        <div class="col-sm-12 mb-40">
+          <PodcastCard :podcast="lastPodcast" type="full"></PodcastCard>
+        </div>
 
-  <div class="col-sm-12 mb-40">
-    <PodcastCard :podcast="lastPodcast" type="full"></PodcastCard>
-  </div>
+        <!-- ===== PODCAST CARD LIST ===== -->
+        <div v-for="p in podcasts" :key="p.id" class="col-sm-6 mb-40">
+          <PodcastCard :podcast="p" type="boxed"></PodcastCard>
+        </div>
 
-  <div v-for="p in podcasts" :key="p.id" class="col-sm-12 mb-40">
-    <PodcastCard :podcast="p" type="boxed"></PodcastCard>
-  </div>
-
-
-  <!-- ===== PAGINATION ===== -->
-  <div class="col-sm-12 text-center mb-50">
-  <ol class="pagination">
-  <li><router-link to="#">1</router-link></li>
-  <li><router-link to="#">2</router-link></li>
-  <li><router-link to="#">3</router-link></li>
-  <li><router-link to="#"><i class="fa fa-angle-right"></i></router-link></li>
-  </ol>
-  </div>
-
-  </div>
-
-  </div>
+        <div class="col-sm-12 text-center mb-50">
+          <!-- ===== PAGINATION ===== -->
+          <PodcastPagination :lastId="lastId"></PodcastPagination>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- ===== DONATE ===== -->
-  <section id="donate" class="section-highlight text-center">
-  <div class="container">
-
-  <!-- ===== SECTION TITLE ===== -->
-  <h2 class="title-default">We need your help</h2>
-  <p class="section-description">Help us support the show! Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br />  Vel modi rem laudantium, alias minus temporibus nihil reiciendis vero.</p>
-
-  <!-- ===== DONATE VALUES ===== -->
-  <div class="row mb-50">
-
-  <div class="col-lg-3 col-sm-6 mb-20">
-  <router-link to="#" class="btn btn-default btn-round btn-lg btn-block">U$ 5</router-link>
-  </div>
-
-  <div class="col-lg-3 col-sm-6 mb-20">
-  <router-link to="#" class="btn btn-default btn-round btn-lg btn-block">U$ 10</router-link>
-  </div>
-
-  <div class="col-lg-3 col-sm-6 mb-20">
-  <router-link to="#" class="btn btn-default btn-round btn-lg btn-block">U$ 25</router-link>
-  </div>
-
-  <div class="col-lg-3 col-sm-6 mb-20">
-  <router-link to="#" class="btn btn-default btn-round btn-lg btn-block">U$ 50</router-link>
-  </div>
-
-  </div>
-
-  </div>
-  </section>
+  <DonateSection></DonateSection>
 </div>
 </template>
 
 <script>
-import PodcastCard from "@/components/Podcasts/PodcastCard.vue";
+import PodcastCard from '@/components/Podcasts/PodcastCard.vue';
+import DonateSection from '@/components/Sections/DonateSection.vue';
 
 export default {
 
   name: 'podcast.index',
   data () {
     return {
-      podcasts: []
+      podcasts: [
+        {
+          id: 1,
+          slug: "what-is-web-developement",
+          name: "Episode #06 - You can also post a video",
+          created_at: "December 19, 2015",
+          description: "This is a boxed podcast layout. Lorem ipsum dolor sit amet, consectetur adipisicing elit..",
+          category: "Lifehacks ",
+          duration: "12 min.",
+          thumb: {small: "http://localhost/photofills", large: "http://localhost/photofills"},
+          audio: "assets/audio"
+        },
+        {
+          id: 2,
+          slug: "what-is-web-developement",
+          name: "Episode #06 - You can also post a video",
+          created_at: "December 19, 2015",
+          description: "This is a boxed podcast layout. Lorem ipsum dolor sit amet, consectetur adipisicing elit..",
+          category: "Lifehacks ",
+          duration: "12 min.",
+          thumb: {small: "http://localhost/photofills", large: "http://localhost/photofills"},
+          audio: "assets/audio"
+        },
+      ]
     }
   },
   computed: {
       lastPodcast () {
         return (typeof this.podcasts[0] === 'undefined') ? {} : this.podcasts[0]
+      },
+
+      lastId () {
+        return this.podcasts[this.podcasts.length - 1].id
       }
   },
   components: {
-    PodcastCard
+    PodcastCard,
+    DonateSection
   }
 }
 </script>
