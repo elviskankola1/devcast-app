@@ -1,95 +1,95 @@
 <template>
-		<footer class="footer">
+<footer class="footer">
+  <section class="section-positive">
+    <div class="container">
+      <div class="row mt-70 mb-30">
+        <div class="col-sm-3 mb-40">
+          <h2 class="title-separator white">Sitemap</h2>
+          <ul class="footer-list">
+            <li><router-link :to="{name: 'home'}">Home</router-link></li>
+            <li><router-link :to="{name: 'podcasts.index'}">Podcasts</router-link></li>
+            <li><router-link :to="{name: 'about'}">About</router-link></li>
+            <li><router-link :to="{name: 'contact'}">contact</router-link></li>
+          </ul>
+        </div>
 
-			<!-- ===== FOOTER CONTENT INFORMATION ===== -->
-			<section class="section-positive">
-				<div class="container">
 
-					<div class="row mt-70 mb-30">
+        <div class="col-sm-3 mb-40">
+          <h2 class="title-separator white">Lastest Episodes</h2>
+          <ul class="footer-complement">
+            <li v-for="p in latestPodcasts" :key="p.id">
+              <router-link :to="{name: 'podcasts.show', params:{id: p.id, slug: p.slug }}">
+                  {{ podcast.name }}
+              </router-link>
+              <span>{{ p.created_at }}</span>
+            </li>
+          </ul>
+        </div>
 
-						<!-- ===== SITEMAP ===== -->
-						<div class="col-sm-3 mb-40">
-							<h2 class="title-separator white">Sitemap</h2>
-							<ul class="footer-list">
-								<li><a href="index.html">Home</a></li>
-								<li><a href="podcasts.html">Podcasts</a></li>
-								<li><a href="about-us.html">About Us</a></li>
-								<li><a href="contact.html">Contact</a></li>
-							</ul>
-						</div>
 
-						<!-- ===== PODCASTS EPISODES ===== -->
-						<div class="col-sm-3 mb-40">
-							<h2 class="title-separator white">Lastest Episodes</h2>
-							<ul class="footer-complement">
-								<li>
-									<a href="podcast.html">#08 - Our vacations have been so amazing!</a>
-									<span>December 22, 2015</span>
-								</li>
-								<li>
-									<a href="podcast-soundcloud.html">#07 - Podcast embed from SoundCloud</a>
-									<span>December 21, 2015</span>
-								</li>
-							</ul>
-						</div>
+        <div class="col-sm-3 mb-40">
+          <h2 class="title-separator white">Who is helping?</h2>
+          <ul class="footer-complement">
+            <li v-for="d in donates" :key="d.name">
+              <a :href="d.link">{{ d.name }}</a>
+              <span>Donation - U$ {{ d.amout }}</span>
+            </li>
+          </ul>
+        </div>
 
-						<!-- ===== PODCASTS EPISODES ===== -->
-						<div class="col-sm-3 mb-40">
-							<h2 class="title-separator white">Who is helping?</h2>
-							<ul class="footer-complement">
-								<li>
-									<a href="#">@reidarking</a>
-									<span>Donation - U$ 10</span>
-								</li>
-								<li>
-									<a href="#">@reidarking</a>
-									<span>Donation - U$ 5</span>
-								</li>
-								<li>
-									<a href="#">@reidarking</a>
-									<span>Donation - U$ 50</span>
-								</li>
-							</ul>
-						</div>
 
-						<!-- ===== SOCIAL CONNECTION ===== -->
-						<div class="col-sm-3 mb-40">
-							<h2 class="title-separator white">We are social</h2>
-							<ul class="social-list">
-								<li class="social-item"><a href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
-								<li class="social-item"><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
-								<li class="social-item"><a href="#" target="_blank"><i class="fa fa-instagram"></i></a></li>
-								<li class="social-item"><a href="#" target="_blank"><i class="fa fa-google-plus"></i></a></li>
-								<li class="social-item"><a href="#" target="_blank"><i class="fa fa-soundcloud"></i></a></li>
-								<li class="social-item"><a href="#" target="_blank"><i class="fa fa-pinterest"></i></a></li>
-								<li class="social-item"><a href="#" target="_blank"><i class="fa fa-youtube"></i></a></li>
-								<li class="social-item"><a href="#" target="_blank"><i class="fa fa-spotify"></i></a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</section>
+        <div class="col-sm-3 mb-40">
+          <h2 class="title-separator white">We are social</h2>
+          <ul class="social-list">
+            <li v-for="social in socials" class="social-item" :key="social.link">
+              <a :href="social.link" target="_blank">
+                <i :class="social.icon"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
-			<!-- ===== FOOTER INFORMATION ===== -->
-			<section class="footer-credits">
-				<div class="container">
 
-					<div class="row">
-						<div class="col-sm-6 footer-logo">
-							<h2><a href="index.html"><img src="assets/logo.png" alt="Soudcast - Podcast Responsive Theme" title="Soundcast - Podcast Responsive Theme" /></a></h2>
-						</div>
-
-						<div class="col-sm-6 text-right">
-							<a href="https://github.com/bernard-ng">bernard-ng</a> - 2018. All rights reserved.
-						</div>
-					</div>
-				</div>
-			</section>
-		</footer>
+  <section class="footer-credits">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6 footer-logo">
+          <h2><a href="index.html"><img src="assets/logo.png" alt="Soudcast - Podcast Responsive Theme" title="Soundcast - Podcast Responsive Theme" /></a></h2>
+        </div>
+        <div class="col-sm-6 text-right">
+          <a href="https://github.com/bernard-ng">bernard-ng</a> - 2018. All rights reserved.
+        </div>
+      </div>
+    </div>
+  </section>
+</footer>
 </template>
 
 <script>
 export default {
-  name: 'Footer'
+  name: 'Footer',
+  data () {
+    return {
+      latestPodcasts : [],
+      donates: [
+        {name: '@bernard-ng', link: "https://git.com", amout: "10"},
+        {name: '@ijoboy', link: "https://git.com", amout: "20"},
+        {name: '@mahid_hm', link: "https://git.com", amout: "50"}
+      ],
+      socials: [
+        {link: 'https://facebook.com/id', icon: "fa fa-facebook"},
+        {link: 'https://facebook.com/id', icon: "fa fa-instagram"},
+        {link: 'https://facebook.com/id', icon: "fa fa-google-plus"},
+        {link: 'https://facebook.com/id', icon: "fa fa-soundcloud"},
+        {link: 'https://facebook.com/id', icon: "fa fa-pinterest"},
+        {link: 'https://facebook.com/id', icon: "fa fa-youtube"},
+        {link: 'https://facebook.com/id', icon: "fa fa-spotify"},
+        {link: 'https://facebook.com/id', icon: "fa fa-twitter"}
+      ]
+    }
+  }
 }
 </script>
