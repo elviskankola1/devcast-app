@@ -1,5 +1,5 @@
 <template>
-<header class="header absolute" itemscope itemtype="http://schema.org/Organization">
+<header class="header sticky" itemscope itemtype="http://schema.org/Organization">
   <div class="container">
     <h1 class="logo">
       <router-link :to="{name: 'home'}">

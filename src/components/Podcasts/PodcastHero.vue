@@ -1,5 +1,5 @@
 <template>
-<section class="podcast-hero" style="background-image: url(http://127.0.0.1/photofills)">
+<section class="podcast-hero" style="height: 80vh">
   <div class="podcast-hero-inner">
     <div class="container">
       <div class="podcast-hero-content">
@@ -9,6 +9,7 @@
           {{ p.name }}
         </router-link>
       </h2>
+      <p>{{ p.description }}</p>
       <ul class="podcast-hero-meta">
         <li class="item">
           <router-link :to="{name: 'categories.show', params:{name: p.category}}" class="podcast-hero-tag" rel="tag">
@@ -37,6 +38,11 @@ export default {
   name: 'PodcastHero',
   props: {
     podcast: {Object, required: true}
+  },
+  computed: {
+    p () {
+      return this.podcast
+    }
   },
   components: {
     PodcastPlayer
