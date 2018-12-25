@@ -13,7 +13,6 @@
           </ul>
         </div>
 
-
         <div class="col-sm-3 mb-40">
           <h2 class="title-separator white">Lastest Episodes</h2>
           <ul class="footer-complement">
@@ -26,7 +25,6 @@
           </ul>
         </div>
 
-
         <div class="col-sm-3 mb-40">
           <h2 class="title-separator white">Who is helping?</h2>
           <ul class="footer-complement">
@@ -36,7 +34,6 @@
             </li>
           </ul>
         </div>
-
 
         <div class="col-sm-3 mb-40">
           <h2 class="title-separator white">We are social</h2>
@@ -51,7 +48,6 @@
       </div>
     </div>
   </section>
-
 
   <section class="footer-credits">
     <div class="container">
@@ -73,21 +69,21 @@ export default {
   name: 'Footer',
   data () {
     return {
-      latestPodcasts : [],
+      latestPodcasts: [],
       donates: [
-        {name: '@bernard-ng', link: "https://git.com", amout: "10"},
-        {name: '@ijoboy', link: "https://git.com", amout: "20"},
-        {name: '@mahid_hm', link: "https://git.com", amout: "50"}
+        { name: '@bernard-ng', link: 'https://git.com', amout: '10' },
+        { name: '@ijoboy', link: 'https://git.com', amout: '20' },
+        { name: '@mahid_hm', link: 'https://git.com', amout: '50' }
       ],
       socials: [
-        {link: 'https://facebook.com/id', icon: "fa fa-facebook"},
-        {link: 'https://facebook.com/id', icon: "fa fa-instagram"},
-        {link: 'https://facebook.com/id', icon: "fa fa-google-plus"},
-        {link: 'https://facebook.com/id', icon: "fa fa-soundcloud"},
-        {link: 'https://facebook.com/id', icon: "fa fa-pinterest"},
-        {link: 'https://facebook.com/id', icon: "fa fa-youtube"},
-        {link: 'https://facebook.com/id', icon: "fa fa-spotify"},
-        {link: 'https://facebook.com/id', icon: "fa fa-twitter"}
+        { link: 'https://facebook.com/id', icon: 'fa fa-facebook' },
+        { link: 'https://facebook.com/id', icon: 'fa fa-instagram' },
+        { link: 'https://facebook.com/id', icon: 'fa fa-google-plus' },
+        { link: 'https://facebook.com/id', icon: 'fa fa-soundcloud' },
+        { link: 'https://facebook.com/id', icon: 'fa fa-pinterest' },
+        { link: 'https://facebook.com/id', icon: 'fa fa-youtube' },
+        { link: 'https://facebook.com/id', icon: 'fa fa-spotify' },
+        { link: 'https://facebook.com/id', icon: 'fa fa-twitter' }
       ]
     }
   }
