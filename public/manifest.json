@@ -1,6 +1,6 @@
 {
-  "name": "vote-machine-app",
-  "short_name": "vote-machine-app",
+  "name": "devcast",
+  "short_name": "devcast",
   "icons": [
     {
       "src": "./img/icons/android-chrome-192x192.png",
