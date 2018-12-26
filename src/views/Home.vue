@@ -6,11 +6,6 @@
 
 					<div class="row">
 
-            <!-- ===== LAST PODCAST ===== -->
-            <div class="col-sm-12 mb-40">
-              <PodcastCard :podcast="lastPodcast" type="full"></PodcastCard>
-            </div>
-
             <!-- ===== PODCAST CARD LIST ===== -->
             <div v-for="p in podcasts" :key="p.id" class="col-sm-6 mb-40">
               <PodcastCard :podcast="p" type="boxed"></PodcastCard>
@@ -19,7 +14,7 @@
 
 						<!-- ===== CHECK MORE ===== -->
 						<div class="col-sm-12 mb-50">
-							<router-link :to="{name: 'podcasts'}" class="btn btn-primary btn-block btn-lg">
+							<router-link :to="{name: 'podcasts.index'}" class="btn btn-primary btn-block btn-lg">
                 View more episodes
               </router-link>
 						</div>
@@ -49,41 +44,7 @@ export default {
   name: 'Home',
   data () {
     return {
-      podcasts: [
-        {id: 1,
-        slug: "what-is-web-developement",
-        name: "Episode #01 - WELCOME TO DEVCAST",
-        created_at: "December 19, 2015",
-        description: "This is a boxed podcast layout. Lorem ipsum dolor sit amet, consectetur adipisicing elit..",
-        category: "Lifehacks ",
-        duration: "12 min.",
-        thumb: {small: "http://localhost/photofills", large: "http://localhost/photofills"},
-        audio: "assets/audio"},
-        {id: 1,
-        slug: "what-is-web-developement",
-        name: "Episode #01 - WELCOME TO DEVCAST",
-        created_at: "December 19, 2015",
-        description: "This is a boxed podcast layout. Lorem ipsum dolor sit amet, consectetur adipisicing elit..",
-        category: "Lifehacks ",
-        duration: "12 min.",
-        thumb: {small: "http://localhost/photofills", large: "http://localhost/photofills"},
-        audio: "assets/audio"}
-      ]
-    }
-  },
-  computed: {
-    lastPodcast() {
-      return {
-        id: 1,
-        slug: "what-is-web-developement",
-        name: "Episode #01 - WELCOME TO DEVCAST",
-        created_at: "December 19, 2015",
-        description: "This is a boxed podcast layout. Lorem ipsum dolor sit amet, consectetur adipisicing elit..",
-        category: "Lifehacks ",
-        duration: "12 min.",
-        thumb: {small: "http://localhost/photofills", large: "http://localhost/photofills"},
-        audio: "assets/audio"
-      }
+      podcasts: []
     }
   },
   components: {
@@ -91,6 +52,12 @@ export default {
     DonateSection,
     NewsletterSection,
     AboutSection
+  },
+  mounted () {
+    this.$http.get('http://localhost:8081').then(r => {
+      this.podcasts = r.data.podcasts
+      this.message = r.data.message
+    })
   }
 }
 </script>

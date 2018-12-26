@@ -11,8 +11,8 @@
         </div>
 
         <!-- ===== PODCAST CARD LIST ===== -->
-        <div v-for="p in podcasts" :key="p.id" class="col-sm-6 mb-40">
-          <PodcastCard :podcast="p" type="boxed"></PodcastCard>
+        <div v-for="p in podcasts" :key="p.id" class="col-sm-12 mb-40">
+          <PodcastCard :podcast="p" type="full"></PodcastCard>
         </div>
 
         <div class="col-sm-12 text-center mb-50">
