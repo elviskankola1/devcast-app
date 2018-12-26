@@ -34,7 +34,7 @@ export default {
       podcast: {
         id: 1,
         slug: "what-is-web-developement",
-        name: "Episode #06 - You can also post a video",
+        name: "Episode #01 - WELCOME TO DEVCAST",
         created_at: "December 19, 2015",
         description: "This is a boxed podcast layout. Lorem ipsum dolor sit amet, consectetur adipisicing elit..",
         category: "Lifehacks ",
@@ -43,9 +43,6 @@ export default {
         audio: "assets/audio"
       }
     }
-  },
-  computed: {
-    ...vuex.mapGetters(['showPodcastHero'])
   },
   components: {
     Header,
