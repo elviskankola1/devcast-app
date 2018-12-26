@@ -324,8 +324,9 @@ li {
 }
 
 .btn-primary:hover,
-.btn-primary:focus {
-	background: #050507;
+.btn-primary:focus,
+.btn-primary.active {
+	background: #050507 !important;
 	border: #050507;
 }
 
@@ -1377,8 +1378,7 @@ form .form-callback.error {
 }
 
 .header.sticky.scrolling {
-	background-color: #110f16;
-	background-color: rgba(17, 15, 22, 0.95);
+	background-color: rgba(17, 15, 22, 0.85);
 	zoom: 1;
 	background-color: transparent\9;
 	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#f2110f16, endColorstr=#f2110f16)";
@@ -1393,7 +1393,7 @@ form .form-callback.error {
 
 .logo {
 	float: left;
-	padding: 25px 0;
+	padding: 35px 0;
 	margin: 0;
 	line-height: 0;
 }
