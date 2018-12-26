@@ -5,9 +5,6 @@
     <div v-if="name !== 'about' & name !== 'contact'">
       <PodcastHero :podcast="podcast"></PodcastHero>
     </div>
-    <div v-else>
-      <PageHeader :name="name" :routeName="routeName"></PageHeader>
-    </div>
 
     <main id="main" class="main">
       <transition name="fade">
@@ -26,22 +23,10 @@ import PageHeader from '@/components/PageHeader.vue'
 import vuex from 'vuex'
 
 export default {
-  name: 'Devcast',
   data () {
     return {
-      name: this.$name,
-      routeName: 'home',
-      podcast: {
-        id: 1,
-        slug: "what-is-web-developement",
-        name: "Episode #01 - WELCOME TO DEVCAST",
-        created_at: "December 19, 2015",
-        description: "This is a boxed podcast layout. Lorem ipsum dolor sit amet, consectetur adipisicing elit..",
-        category: "Lifehacks ",
-        duration: "12 min.",
-        thumb: {small: "http://localhost/photofills", large: "http://localhost/photofills"},
-        audio: "assets/audio"
-      }
+      name: 'Devcasts',
+      podcast: {}
     }
   },
   components: {
@@ -49,6 +34,11 @@ export default {
     Footer,
     PodcastHero,
     PageHeader
+  },
+  mounted () {
+    this.$http.get('http://localhost:8081').then(r => {
+      this.podcast = r.data.podcasts[0]
+    })
   }
 }
 </script>
