@@ -47,6 +47,45 @@ import AboutSection from '@/components/Sections/AboutSection.vue'
 
 export default {
   name: 'Home',
+  data () {
+    return {
+      podcasts: [
+        {id: 1,
+        slug: "what-is-web-developement",
+        name: "Episode #01 - WELCOME TO DEVCAST",
+        created_at: "December 19, 2015",
+        description: "This is a boxed podcast layout. Lorem ipsum dolor sit amet, consectetur adipisicing elit..",
+        category: "Lifehacks ",
+        duration: "12 min.",
+        thumb: {small: "http://localhost/photofills", large: "http://localhost/photofills"},
+        audio: "assets/audio"},
+        {id: 1,
+        slug: "what-is-web-developement",
+        name: "Episode #01 - WELCOME TO DEVCAST",
+        created_at: "December 19, 2015",
+        description: "This is a boxed podcast layout. Lorem ipsum dolor sit amet, consectetur adipisicing elit..",
+        category: "Lifehacks ",
+        duration: "12 min.",
+        thumb: {small: "http://localhost/photofills", large: "http://localhost/photofills"},
+        audio: "assets/audio"}
+      ]
+    }
+  },
+  computed: {
+    lastPodcast() {
+      return {
+        id: 1,
+        slug: "what-is-web-developement",
+        name: "Episode #01 - WELCOME TO DEVCAST",
+        created_at: "December 19, 2015",
+        description: "This is a boxed podcast layout. Lorem ipsum dolor sit amet, consectetur adipisicing elit..",
+        category: "Lifehacks ",
+        duration: "12 min.",
+        thumb: {small: "http://localhost/photofills", large: "http://localhost/photofills"},
+        audio: "assets/audio"
+      }
+    }
+  },
   components: {
     PodcastCard,
     DonateSection,
