@@ -52,10 +52,7 @@
   <section class="footer-credits">
     <div class="container">
       <div class="row">
-        <div class="col-sm-6 footer-logo">
-          <h2><a href="index.html"><img src="assets/logo.png" alt="Soudcast - Podcast Responsive Theme" title="Soundcast - Podcast Responsive Theme" /></a></h2>
-        </div>
-        <div class="col-sm-6 text-right">
+        <div class="col-sm-12 text-right">
           <a href="https://github.com/bernard-ng">bernard-ng</a> - 2018. All rights reserved.
         </div>
       </div>
