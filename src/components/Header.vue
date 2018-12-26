@@ -1,9 +1,9 @@
 <template>
-<header class="header sticky" itemscope itemtype="http://schema.org/Organization">
+<header class="header scrolling sticky" itemscope itemtype="http://schema.org/Organization">
   <div class="container">
     <h1 class="logo">
       <router-link :to="{name: 'home'}">
-        <img itemprop="logo" src="assets/logo.png" alt="logo" />
+        <span itemprop="logo"><strong>Dev</strong>cast</span>
       </router-link>
     </h1>
 
@@ -26,7 +26,7 @@
         </router-link>
       </ul>
 
-      <a href="#" class="btn-hamburguer-menu" @click="toggle"><i class="fa fa-bars"></i></a>
+      <a href="#" class="btn-hamburguer-menu"><i class="fa fa-bars"></i></a>
     </nav>
   </div>
 </header>
@@ -35,10 +35,5 @@
 <script>
 export default {
   name: 'Header',
-  methods: {
-    toggle () {
-      console.log('toggled')
-    }
-  }
 }
 </script>
