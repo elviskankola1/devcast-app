@@ -37,30 +37,8 @@ export default {
   name: 'podcast.index',
   data () {
     return {
-      podcasts: [
-        {
-          id: 1,
-          slug: "what-is-web-developement",
-          name: "Episode #06 - You can also post a video",
-          created_at: "December 19, 2015",
-          description: "This is a boxed podcast layout. Lorem ipsum dolor sit amet, consectetur adipisicing elit..",
-          category: "Lifehacks ",
-          duration: "12 min.",
-          thumb: {small: "http://localhost/photofills", large: "http://localhost/photofills"},
-          audio: "assets/audio"
-        },
-        {
-          id: 2,
-          slug: "what-is-web-developement",
-          name: "Episode #06 - You can also post a video",
-          created_at: "December 19, 2015",
-          description: "This is a boxed podcast layout. Lorem ipsum dolor sit amet, consectetur adipisicing elit..",
-          category: "Lifehacks ",
-          duration: "12 min.",
-          thumb: {small: "http://localhost/photofills", large: "http://localhost/photofills"},
-          audio: "assets/audio"
-        },
-      ]
+      message: '',
+      podcasts: []
     }
   },
   computed: {
@@ -75,6 +53,12 @@ export default {
   components: {
     PodcastCard,
     DonateSection
+  },
+  mounted () {
+    this.$http.get('http://localhost:8081').then(r => {
+      this.podcasts = r.data.podcasts
+      this.message = r.data.message
+    })
   }
 }
 </script>
